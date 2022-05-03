@@ -1,0 +1,57 @@
+
+syntax = "proto3";
+
+package purpose;
+option go_package = "./pb";
+
+service Purpose {
+    //
+    // Query
+    //
+
+    rpc MissionStream(MissionStreamRequest) returns (stream MissionStreamResponse) {}
+
+    //
+    // Write
+    //
+
+    rpc AddMission(AddMissionRequest) returns (AddMissionResponse) {}
+    rpc RemoveMission(RemoveMissionRequest) returns (RemoveMissionResponse) {}
+}
+
+//
+// Model
+//
+
+message Mission {
+    string title = 1;
+    uint64 payout = 2;
+    bool completed = 3;
+}
+
+//
+// Queries
+//
+
+message MissionStreamRequest {}
+
+message MissionStreamResponse {
+    string type = 1;
+    repeated Mission missions = 2;
+}
+
+//
+// Writes
+//
+
+message AddMissionRequest {
+    Mission mission = 1;
+}
+
+message AddMissionResponse {}
+
+message RemoveMissionRequest {
+    Mission mission = 1;
+}
+
+message RemoveMissionResponse {}
