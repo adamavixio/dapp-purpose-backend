@@ -12,9 +12,9 @@ import (
 	"net"
 	"sync"
 
+	"github.com/adamavixio/goethix"
 	"github.com/adamavixio/logger"
 	pb "github.com/adamavixio/purpose-backend/gRPC"
-	"github.com/adamavixio/purpose-backend/goethix"
 	"github.com/adamavixio/purpose-backend/web3"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"

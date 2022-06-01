@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/adamavixio/purpose-backend/goethix"
+	"github.com/adamavixio/goethix"
 	"github.com/adamavixio/purpose-backend/web3"
 	"github.com/ethereum/go-ethereum/common"
 )
